@@ -53,4 +53,4 @@ To create more content, this is the workflow (assuming you have not started the 
 11. git push origin content
 12. deactivate
 
-Of course, the workflow here could be simplified with some scripts, but I just created all this, so that is a refinement for later.
+Of course, the workflow here could be simplified with some scripts, but I just created all this, so that is a refinement for later. I'll provide an update later when I do that.
