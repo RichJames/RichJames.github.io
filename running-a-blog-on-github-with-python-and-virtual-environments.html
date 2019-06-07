@@ -66,19 +66,21 @@
 </ol>
 <p>At this point, I have the blog set up with the first page and the about page, all updated at github. I can view my blog at <a href="https://richjames.github.io/category/misc.html">https://richjames.github.io/category/misc.html</a>.</p>
 <p>I use virtualenvwrapper to manage python environments, which can be seen at step 4 above.  When I am done working in such an environment, just enter 'deactivate' to end the environment session.</p>
-<p>To create more content, this is the workflow (assuming you have not started the virtual environment yet):
-1. workon blog
-2. cd content/
-3. touch second-post.md  (example name here.)
-3. vim second-post.md (add content)
-5. cd ..
-6. pelican content -o output -s publishconf.py
-7. ghp-import -m "Generate Pelican site" --no-jekyll -b master output
-8. git push origin master
-9. git add content
-10. git commit -m 'added a first post, a photo and an about page'
-11. git push origin content
-12. deactivate</p>
+<p>To create more content, this is the workflow (assuming you have not started the virtual environment yet):</p>
+<ol>
+<li>workon blog</li>
+<li>cd content/</li>
+<li>touch second-post.md  (example name here.)</li>
+<li>vim second-post.md (add content)</li>
+<li>cd ..</li>
+<li>pelican content -o output -s publishconf.py</li>
+<li>ghp-import -m "Generate Pelican site" --no-jekyll -b master output</li>
+<li>git push origin master</li>
+<li>git add content</li>
+<li>git commit -m 'added a first post, a photo and an about page'</li>
+<li>git push origin content</li>
+<li>deactivate</li>
+</ol>
 <p>Of course, the workflow here could be simplified with some scripts, but I just created all this, so that is a refinement for later. I'll provide an update later when I do that.</p>
     </div><!-- /.entry-content -->
 

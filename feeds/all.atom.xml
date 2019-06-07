@@ -44,17 +44,19 @@
 &lt;/ol&gt;
 &lt;p&gt;At this point, I have the blog set up with the first page and the about page, all updated at github. I can view my blog at &lt;a href="https://richjames.github.io/category/misc.html"&gt;https://richjames.github.io/category/misc.html&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I use virtualenvwrapper to manage python environments, which can be seen at step 4 above.  When I am done working in such an environment, just enter 'deactivate' to end the environment session.&lt;/p&gt;
-&lt;p&gt;To create more content, this is the workflow (assuming you have not started the virtual environment yet):
-1. workon blog
-2. cd content/
-3. touch second-post.md  (example name here.)
-3. vim second-post.md (add content)
-5. cd ..
-6. pelican content -o output -s publishconf.py
-7. ghp-import -m "Generate Pelican site" --no-jekyll -b master output
-8. git push origin master
-9. git add content
-10. git commit -m 'added a first post, a photo and an about page'
-11. git push origin content
-12. deactivate&lt;/p&gt;
+&lt;p&gt;To create more content, this is the workflow (assuming you have not started the virtual environment yet):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;workon blog&lt;/li&gt;
+&lt;li&gt;cd content/&lt;/li&gt;
+&lt;li&gt;touch second-post.md  (example name here.)&lt;/li&gt;
+&lt;li&gt;vim second-post.md (add content)&lt;/li&gt;
+&lt;li&gt;cd ..&lt;/li&gt;
+&lt;li&gt;pelican content -o output -s publishconf.py&lt;/li&gt;
+&lt;li&gt;ghp-import -m "Generate Pelican site" --no-jekyll -b master output&lt;/li&gt;
+&lt;li&gt;git push origin master&lt;/li&gt;
+&lt;li&gt;git add content&lt;/li&gt;
+&lt;li&gt;git commit -m 'added a first post, a photo and an about page'&lt;/li&gt;
+&lt;li&gt;git push origin content&lt;/li&gt;
+&lt;li&gt;deactivate&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Of course, the workflow here could be simplified with some scripts, but I just created all this, so that is a refinement for later. I'll provide an update later when I do that.&lt;/p&gt;</content></entry></feed>
