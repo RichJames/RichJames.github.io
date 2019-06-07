@@ -40,6 +40,7 @@ At this point, I have the blog set up with the first page and the about page, al
 I use virtualenvwrapper to manage python environments, which can be seen at step 4 above.  When I am done working in such an environment, just enter 'deactivate' to end the environment session.
 
 To create more content, this is the workflow (assuming you have not started the virtual environment yet):
+
 1. workon blog
 2. cd content/
 3. touch second-post.md  (example name here.)
