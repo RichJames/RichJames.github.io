@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Running a Blog on Github with Python and virtual environments</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rich Insights Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Rich Insights </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/running-a-blog-on-github-with-python-and-virtual-environments.html" rel="bookmark"
+           title="Permalink to Running a Blog on Github with Python and virtual environments">Running a Blog on Github with Python and virtual environments</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-06-06T00:00:00-05:00">
+                Published: Thu 06 June 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/rich-james.html">Rich James</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <h1>How I modified the opensource.com article so I could use a virtual python environment</h1>
+<p>This blog exists because of this article:  <a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python?utm_medium=Email&amp;utm_campaign=weekly&amp;sc_cid=701f20000012r6qAAA">Run your blog on GitHub Pages with Python</a>.</p>
+<p>However, I ran into some issues when trying to follow the directions in that article.  It turns out, they were due to me wanting to create an isolated python environment, which is good practice, when following those instructions.  I created a new virtual environment in which to try the things in that article.  But, I ran into some issues coordinating between github and my environment.</p>
+<p>So, without further ado, these are the steps I followed to successfully create this blog:</p>
+<ol>
+<li>Create a new github repository as instructed (username/username.github.io)</li>
+<li>Clone that repository onto my local machine and call it 'blog'</li>
+<li>cd blog</li>
+<li>mkvirtualenv -a . -p python3.6 blog</li>
+<li>pip install pelican ghp-import Markdown</li>
+<li>git checkout -b content</li>
+<li>pelican-quickstart (and fill out as instructed)</li>
+<li>git add .</li>
+<li>git commit -m 'initial pelican commit to content'</li>
+<li>git push origin content</li>
+<li>cd content/</li>
+<li>mkdir pages images</li>
+<li>cp /home/rich/Pictures/me.jpg images/</li>
+<li>touch first-post.md</li>
+<li>touch pages/about.md</li>
+<li>vim first-post.md (and add whatever text into this file)</li>
+<li>vim pages/about.md (and add whatever text into this file)</li>
+<li>cd ..</li>
+<li>pelican content -o output -s publishconf.py</li>
+<li>ghp-import -m "Generate Pelican site" --no-jekyll -b master output</li>
+<li>git push origin master</li>
+<li>git add content</li>
+<li>git commit -m 'added a first post, a photo and an about page'</li>
+<li>git push origin content</li>
+</ol>
+<p>At this point, I have the blog set up with the first page and the about page, all updated at github. I can view my blog at <a href="https://richjames.github.io/category/misc.html">https://richjames.github.io/category/misc.html</a>.</p>
+<p>I use virtualenvwrapper to manage python environments, which can be seen at step 4 above.  When I am done working in such an environment, just enter 'deactivate' to end the environment session.</p>
+<p>To create more content, this is the workflow (assuming you have not started the virtual environment yet):
+1. workon blog
+2. cd content/
+3. touch second-post.md  (example name here.)
+3. vim second-post.md (add content)
+5. cd ..
+6. pelican content -o output -s publishconf.py
+7. ghp-import -m "Generate Pelican site" --no-jekyll -b master output
+8. git push origin master
+9. git add content
+10. git commit -m 'added a first post, a photo and an about page'
+11. git push origin content
+12. deactivate</p>
+<p>Of course, the workflow here could be simplified with some scripts, but I just created all this, so that is a refinement for later. I'll provide an update later when I do that.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
