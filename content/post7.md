@@ -1,5 +1,5 @@
 title: Improving American Football
-date: June 20, 2019
+date: July 05, 2019
 author: Rich James
 
 # American football has problems and needs help
